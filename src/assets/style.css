@@ -1,0 +1,28 @@
+.entry {
+	text-decoration: none;
+	display: inline;
+	position: relative;
+	user-select: none;
+}
+
+.entry::before {
+	--thickness: 1.5px;
+	border-radius: calc(var(--thickness) / 2);
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 0;
+	height: var(--thickness);
+	/* translate: 0 calc(var(--thickness) / -2); */
+	background-color: currentColor;
+	transition: width .25s ease;
+}
+
+.entry.strike-through {
+	color: green;
+}
+
+.entry.strike-through::before {
+	width: 100%;
+}
